@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Rubik:wght@500&display=swap');
+
+body{ 
+    font-family: 'Poppins', sans-serif;
+    min-height: 100%;
+    background: #dadce0;
+}
+
+/* TOGGLE SIDEBAR/MAIN */
+
+.main{
+    
+    margin-top: 60px;
+    transition: 0.4s;
+    margin-left: 260px;
+}
+
+.active-nav{
+    margin-left: -260px;
+}
+
+.active-cont{
+    margin-left: 0px;
+}
+
+/* MAIN HEADER */
+
+header {
+    padding: 2rem 1rem 0.3rem 1rem !important;
+    margin-bottom: 15px;
+    background: white;
+    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.5);
+}
+
+.pagetitle {
+	margin-bottom: 10px;
+}
+
+.pagetitle h1 {
+	font-size: 24px;
+	margin-bottom: 0;
+	font-weight: 500;
+}
+
+.pagetitle li {
+    color: #343a40;
+}
+
+.pagetitle li a{
+    color: #797c7f;
+    text-decoration: none;
+}
+
+.pagetitle li a:hover,
+.pagetitle li a:active {
+    color: #343a40;
+}
+
+/* MAIN SECTION */
+
+/* section {
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1.5rem;
+} */

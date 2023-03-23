@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+::-webkit-scrollbar{
+    height: 6px;
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 15px;
+    background: #4e4b44;
+}
+
+.sidebar{
+    width: 260px;
+    height: 100% !important;
+    top: 80px !important;
+    position: fixed;
+    transition: 0.4s;
+}
+
+.sidebar i{
+    font-size: 16px;
+}
+
+.prof {
+    border-radius: 25px;
+    background-color: rgba(225, 225, 225, 0.5);
+}
+
+.scrollbox{
+    overflow: auto;
+}
+
+#log1-heading {
+    background-color: rgba(225, 225, 225, 0.5);
+}
+
+.sidebar .accordion-button::after{
+    filter: brightness(0%) invert(100%);
+}
+
+.sidebar .accordion-button:not(.collapsed)::after{
+    filter: brightness(0%) invert(100%);
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.35);
+}

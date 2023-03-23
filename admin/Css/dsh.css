@@ -1,0 +1,184 @@
+/*========== GOOGLE FONTS ==========*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*========== VARIABLES CSS ==========*/
+:root {
+
+
+  /*========== Colors ==========*/
+
+  --first-color-light: #F4F0FA;
+  --title-color: #19181B;
+  --text-color: #58555E;
+  --text-color-light: #A5A1AA;
+  --body-color: #F9F6FD;
+  --container-color: #FFFFFF;
+
+  /* #F6C53F */ 
+  /* #0d6efd */
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Helmet', sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: 1rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: 1rem;
+    --smaller-font-size: .900rem;
+  }
+}
+
+/*========== BASE ==========*/
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+
+/* main */
+
+
+.cards{
+
+  width: 100%;
+  padding: 35px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  cursor: pointer;
+}
+
+.cards .card{
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 7px 25px 0 rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    justify-content: center;
+
+}
+
+.card:first-child {
+  border-left: 7px solid #F6C53F;
+}
+
+.card:nth-child(2) {
+  border-left: 7px solid #F6C53F;
+}
+
+.card:nth-child(3) {
+  border-left: 7px solid #F6C53F;
+}
+
+.card:nth-child(4) {
+  border-left: 7px solid #F6C53F;
+}
+
+.number{
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
+}
+
+.card-name{
+  color: black;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.icon-box i{
+  font-size: 45px;
+  color: #0d6efd;
+}
+
+
+/* card body */
+
+
+.cards-new{
+  width: 100%;
+  padding: 35px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  cursor: pointer;
+ 
+}
+
+.cards-new .card-new{
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 7px 25px 0 rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  justify-content: center;
+  
+}
+
+
+
+.icon-box-new i{
+  font-size: 45px;
+  color: #0d6efd;
+ 
+}
+
+.corp{
+  font-size:  15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black;
+  display: flex;
+}
+
+.position{
+  font-size:  17px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black;
+}
+
+
+.card_footer{
+  display: flex;
+  padding: 1rem;
+  margin-top: auto;
+  color: #333;
+  width: 130%;
+}
+
+.user{
+  display: flex;
+  gap: .5rem;
+}
+
+.user img{
+  width: 30px;
+  height: 50px;
+  margin: 1rem;
+}
+
+.user_info > small{
+  color: #333;
+}
+
+
+
+
+

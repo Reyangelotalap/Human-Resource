@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Roboto&display=swap');
+
+
+@font-face {
+  font-family: 'Helmet';
+  src: url(../Css/Helmet-lWZV.otf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600; */
+    font-family: 'Helmet', sans-serif;
+}
+
+.container{
+  position: relative;
+  width: 100%; 
+  background-color: #fff;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container::before{
+  content: '';
+  position: fixed;
+  height: 2000px;
+  width: 2000px;
+  top: -10%;
+  right: 48%;
+  background-image: linear-gradient(-45deg,
+  #0d6efd 0%, #0d6efd 100%);
+  transform: translateY(-30%);
+  border-radius: 50%;
+}
+
+.forms-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 25%;
+  left: 25%;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.title{
+  font-size: 2.2rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.input-field{
+  max-width: 380px;
+  width: 100%;
+  height: 55px;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  border-radius: 55px;
+  display:grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+
+
+
+.input-field i{
+  text-align: center;
+  line-height: 55px;
+  color: #0d6efd;
+  font-size: 1.1rem;
+}
+
+.input-field input{
+  outline: none;
+  background: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+  /* border: 1px solid black; */
+  border-radius: 20px;
+}
+
+
+.input-field input:placeholder-shown{
+    color: #aaa;
+    font-weight: 500;
+  
+}
+
+.btn{
+  width: 100%;
+  max-width: 300px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  background-color: #F6C53F;
+  color: white;
+  border: none;
+  border-radius: 55px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: #DDB138;
+}
+
+/* .social-media{
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon{
+  height: 46px;
+  width: 35px;
+  margin: 0 0.10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color:#328BEA;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+} */
+
+.social-text { 
+  padding: 0.7rem 0;
+}
+
+.social-text a{
+    text-decoration: none;
+    color: #F6C53F;
+  
+}
+
+.logo{
+    width: 50%;
+    display: flex;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;   
+   margin: 1rem;
+}
+
+.image{
+  position: fixed;
+  width: 50%;
+  height:70%;
+  display: flex;
+  left: 0;
+  bottom: 7rem;
+}
+
+.profile{
+    /* border: 1px solid black; */
+    width: 8%;
+    height: 8%;
+    border-radius: 50%;
+}
+
+
+
+/*FOOTER*/
+#footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* background-color: #fff; */
+    margin-left: 21rem;
+    padding: 15px 30px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/*END OF FOOTER*/
+
+
+/*Responsive side*/
+
+
+
+@media  screen and (max-width: 769px) {
+
+  .container::before{
+      background-image: linear-gradient(-45deg,
+      #0d6efd 0%, #0d6efd 100%);
+      transform: translateX(25%);
+      border-radius: 50%;
+  }
+  
+  .forms-container{
+      left: 1%;
+  }
+  .profile{
+    /* border: 1px solid black; */
+      width: 15%;
+      height: 15%;
+}
+#footer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background-color: #fff; */
+      margin-left:1rem;
+}
+
+.btn{
+      width: 50%;
+      color: #444;
+}
+
+/* .logo{
+      margin-top: -25rem;
+      margin-left: 37rem;
+      width: 2%;
+      height: 2%;
+      position: relative;
+} */
+  .image{
+    display: none;
+  }
+
+.title{
+      color: #fff;
+      margin-top: 10px;
+}
+
+}
+
+@media screen and (min-width: 770px) and (max-width:1023px) {
+
+    #footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  /* background-color: #fff; */
+    margin-left: 13rem;
+}
+
+    .input-field{
+      max-width: 320px;
+      width: 100%;
+      height: 55px;
+      background-color: #f0f0f0;
+      margin: 10px 0;
+      border-radius: 55px;
+      display:grid;
+      grid-template-columns: 15% 85%;
+      padding: 0 0.4rem;
+      position: relative;
+    }
+
+    .title{
+      margin-top: 10px;
+    }
+
+    .btn{
+      color: #444;
+    }
+   
+    .profile{
+      /* border: 1px solid black; */
+      width: 10%;
+      height: 10%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  
+      .image{
+        top: 5.7rem;
+      }
+}

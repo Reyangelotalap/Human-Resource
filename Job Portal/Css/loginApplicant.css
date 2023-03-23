@@ -1,0 +1,120 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #fff;
+  font-family: 'Helmet', sans-serif;
+}
+
+
+.login{
+  position: relative;
+  width: 500px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0 16px 16px 0;
+  padding: 24px 24px 24px 12px;
+  text-align: center;
+}
+
+.login:before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 48px;
+  top: 0;
+  left: -48px;
+  
+}
+
+.login:after{
+  content: '';
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 0%;
+  left: -72px;
+  border-radius: 50%;
+}
+
+h2{
+  color: #0d6efd;
+  margin: 24px 0;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.login-form{
+  padding: 10px 0;
+  position: relative;
+}
+
+.login-form input{
+  width: 100%;
+  font-size: 16px;
+  padding: 20px 17px !important;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #333;
+  border: 1px solid black;
+  
+}
+
+.login-form :focus{
+  outline: 0;
+  border: 1px solid #0d6efd;
+}
+
+.login-form ::placeholder{
+  color: #313233;
+
+}
+
+.link{
+  display: flex;
+  color: white;
+  cursor: pointer;
+  margin: 0 0 20px 0;
+}
+.button{
+  margin: 32px 0;
+  padding: 20px 8.4rem !important;
+  background: #0d6efd;
+  border: 0;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 450px;
+} 
+
+.button:hover {
+  background-color: #ffe082;
+}
+
+
+.show-password{
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  right: 10px !important;
+  color: #F9AD6A;
+  font-size: 1.2rem;
+}
+
+.show-password ion-icon{
+  transition: all linear 0.3s;
+}
+
+.show-password ion-icon[name='eye-off-outline']{
+  color: #313131; 
+}
+
+
+

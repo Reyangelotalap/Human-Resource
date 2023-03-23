@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../../../favicon/Your paragraph text (1)-modified.png" type="image/x-icon">
+    <title>List of New Hired Employees | RGBC</title>
+
+
+    
+  <link rel="stylesheet" href="https://kit.fontawesome.com/064cb16be2.css">
+  <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/javascript-state-machine/3.1.0/state-machine.min.js">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/064cb16be2.js"></script>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+
+  <!-- Datatable Dependency start -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/datatables.min.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/datatables.min.js">
+  </script>
+
+  <!-- Datatable Dependency end -->
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+  <!-- OWN STYLE -->
+ <link rel="stylesheet" href="../module-4/module-4-css//m4-page-1.css">
+  <link rel="stylesheet" href="../include/css//sidebar.css">
+  <link rel="stylesheet" href="../include/css//main.css">
+
+  <!-- sweet alert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+  
+
+</head>
+<body>
+
+<?php
+include '../include/header.php';
+?>
+
+<main class="main">
+
+    <header>
+        <div class="pagetitle">
+        <h1 style="color: black; font-weight: 700" >Newly Hired</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../dashboard/dashboard.php">Home</a>
+                    </li>
+                    
+                    <li class="breadcrumb-item active" style="color: black; font-weight: 700">List of Hired</li>
+
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    
+<section>
+
+
+<div class="col-md-15">
+        <div class="card">
+
+          <div class="card-body">
+
+
+            <!-- <button type="button" class="btn btn-sm btn-primary btn-create" data-toggle="modal"
+                                data-target="#addApplicant"
+                                style="float: right; margin-left: -10rem;  background-color: #007bff; padding: 10px; text-transform: uppercase;"><i
+                                    class="fas fa-plus" style="padding: .2rem"></i>Add  Qualified</button> -->
+
+            <br>
+            <?php  
+                $connect = mysqli_connect("localhost", "root", "", "human_resource 1");  
+                $query ="SELECT *, DATE_FORMAT(date_hired, '%M %d, %Y')as formatted_date FROM  `newlyhiredstatus_tbl`";  
+                $result = mysqli_query($connect, $query);   
+                ?>
+
+            <br>
+            <table id="table_id" class="table table-bordered" style="width:100%; ">
+              <thead height="70px">
+                <tr style="background-color: #007bff; color: #fff; font-weight: normal; text-transform: uppercase"
+                  class="text-center">
+
+                  <th>#</th>
+                  <th>Employee Name</th>
+                  <th>Job Applied</th>
+                  <th>Status</th>
+                  <th>date hired</th>
+
+
+
+
+
+                </tr>
+              </thead>
+              <tbody>
+
+                <?php  
+      while($row = mysqli_fetch_array($result))  
+      {          
+   ?>
+
+                <tr class="text-center">
+
+                  <!-- <td><input type="checkbox" name=""></td> -->
+
+
+
+                  <td><?php echo $row['id']?></td>
+                  <td><?php echo $row['applicant_name']?></td>
+                  <td><?php echo $row['applied_job']?></td>
+                 <?php if($row['status'] === "hire"){?>
+                  <td class="text-success">Hired</tdc>
+                  <?php }?>
+                  <td><?php echo $row['formatted_date']?></td>
+                  
+
+                
+
+                  
+
+                </tr>
+                <?php
+  }  
+  ?>
+
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="statusModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Select Top Candidates</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <?php
+                // $query = "SELECT *
+                //  FROM passed_tbl ";
+                // $result = mysqli_query($connection, $query);
+                // if (mysqli_num_rows($result)) {
+                //     $row = mysqli_fetch_assoc($result)
+                ?>
+              <form action="../dashboard/hire.php" method="POST">
+                <input type="hidden" name="r_id" id="r_id" value="<?php echo $row["id"]; ?>">
+                <input type="hidden" name="applicant_name" id="applicant_name"
+                  value="<?php echo $row["applicant_name"]; ?>">
+                <input type="hidden" name="applied_job" id="applied_job" value="<?php echo $row["applied_job"]; ?>">
+                <input type="hidden" name="resume_file" id="resume_file" value="<?php echo $row["resume_file"]; ?>">
+                <input type="hidden" name="email" id="email" value="<?php echo $row["email"]; ?>">
+                <input type="hidden" name="contact" id="contact" value="<?php echo $row["contact"]; ?>">
+                <select class="form-select" name="status" aria-label="Default select example">
+                  <option selected>---Select---</option>
+                  <option value="hire" name="hire" style="color: black; font-weight: 700">Hire
+                  </option>
+                  <option value="reject" name="reject" style="color: black; font-weight: 700">Reject</option>
+                </select>
+                <br>
+                <br>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary pull-right" name="update"
+                    style="text-transform:capitalize  !important;">Update Status</button>
+                </div>
+              </form>
+              <?php
+                    
+                // }
+                ?>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+      </div>
+
+
+
+
+      </div>
+
+
+  
+</section>
+
+
+<script>
+  $(document).ready(function() {
+    $('#table_id').DataTable({
+
+      dom: 'Bfrtip',
+      responsive: true,
+      pageLength: 5,
+      // lengthMenu: [0, 5, 10, 20, 50, 100, 200, 500],
+
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+
+    });
+  });
+  </script>
+
+  <script>
+  // For Applicant Initial Interview Appoint
+  $(document).ready(function() {
+    $('.name').on('click', function() {
+      $('#statusModal').modal('show');
+
+      $tr = $(this).closest('tr');
+
+      var data = $tr.children("td").map(function() {
+        return $(this).text();
+      }).get();
+      console.log(data);
+      $('#r_id').val(data[0]);
+      $('#applicant_name').val(data[1]);
+      $('#applied_job').val(data[2]);
+      $('#email').val(data[3]);
+      $('#contact').val(data[3]);
+      
+      $('#resume_file').val(data[5]);
+
+    });
+  });
+  </script>
+
+
+    <?php
+    include '../include/footer.php';
+    ?>
+   
+</main>
+
+
+<?php
+include '../include/script.php';
+?>
+
+</body>
+</html>
